@@ -1,0 +1,25 @@
+#about {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+#projects {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.project-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
