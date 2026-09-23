@@ -23,3 +23,192 @@
 .project-card:hover {
     transform: translateY(-5px);
 }
+
+.hero,
+body > p,
+#about,
+#projects,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Pumpkin cursor (cursor images must be 128px or smaller, so use the 32px version) */
+html,
+body,
+a,
+button {
+    cursor: url("pumpkin-cursor.png") 16 16, auto;
+}
+
+/* Star in the bottom right corner */
+.bottom-right-image {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 120px;
+    height: auto;
+    z-index: 20;
+    pointer-events: none;
+}
+
+
+/* Falling leaves */
+
+.leaves {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.leaves span {
+    --size: 16px;
+    --left: 10%;
+    --duration: 18s;
+    --delay: 0s;
+    --drift: 60px;
+    --color: #e8843a;
+
+    position: absolute;
+    top: -5vh;
+    left: var(--left);
+
+    width: var(--size);
+    height: var(--size);
+
+    border-radius: 0 70% 0 70%;
+    background: var(--color);
+
+    opacity: 0;
+
+    animation: leaf-fall var(--duration) linear var(--delay) infinite;
+}
+
+
+/* Leaf positions */
+
+.leaves span:nth-child(1) {
+    --left: 6%;
+    --size: 18px;
+    --duration: 19s;
+    --drift: 80px;
+    --color: #e8843a;
+}
+
+.leaves span:nth-child(2) {
+    --left: 18%;
+    --size: 12px;
+    --duration: 23s;
+    --delay: -6s;
+    --drift: -60px;
+    --color: #f2bf3a;
+}
+
+.leaves span:nth-child(3) {
+    --left: 31%;
+    --size: 20px;
+    --duration: 21s;
+    --delay: -12s;
+    --drift: 70px;
+    --color: #a8322c;
+}
+
+.leaves span:nth-child(4) {
+    --left: 44%;
+    --size: 14px;
+    --duration: 26s;
+    --delay: -3s;
+    --drift: -90px;
+    --color: #8f5a2a;
+}
+
+.leaves span:nth-child(5) {
+    --left: 57%;
+    --size: 16px;
+    --duration: 20s;
+    --delay: -15s;
+    --drift: 60px;
+    --color: #e8843a;
+}
+
+.leaves span:nth-child(6) {
+    --left: 69%;
+    --size: 11px;
+    --duration: 24s;
+    --delay: -9s;
+    --drift: -50px;
+    --color: #f2bf3a;
+}
+
+.leaves span:nth-child(7) {
+    --left: 81%;
+    --size: 19px;
+    --duration: 22s;
+    --delay: -18s;
+    --drift: 90px;
+    --color: #a8322c;
+}
+
+.leaves span:nth-child(8) {
+    --left: 93%;
+    --size: 13px;
+    --duration: 27s;
+    --delay: -1s;
+    --drift: -70px;
+    --color: #8f5a2a;
+}
+
+
+/* Leaf animation */
+
+@keyframes leaf-fall {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translate3d(var(--drift), 55vh, 0) rotate(200deg);
+    }
+
+    90% {
+        opacity: 0.28;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(
+            calc(var(--drift) * -0.4),
+            110vh,
+            0
+        ) rotate(380deg);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 760px) {
+    .leaves span:nth-child(even) {
+        display: none;
+    }
+
+    .leaves span {
+        animation-duration: calc(var(--duration) * 1.4);
+    }
+}
+
+
+/* Turn leaves off for reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .leaves {
+        display: none;
+    }
+}
