@@ -330,3 +330,50 @@ section h2.show {
         0 0 10px rgba(232, 170, 70, 0.7),
         0 0 25px rgba(232, 132, 58, 0.5);
 }
+
+#skills {
+    background-color: transparent;
+    padding: 80px 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background: rgba(240, 240, 240, 0.12);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(232, 132, 58, 0.25);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.skill-card h3 {
+    color: #fff3df;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 8px rgba(255, 170, 70, 0.4);
+}
+
+.skill-card p {
+    margin-bottom: 0;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(232, 132, 58, 0.8);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(232, 132, 58, 0.3);
+}
+
