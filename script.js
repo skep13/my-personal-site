@@ -497,3 +497,22 @@ window.addEventListener("resize", () => {
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
 });
+
+
+const sectionHeadings = document.querySelectorAll("section h2");
+const headingObserver = new InteractionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    },
+    {
+        threshold: 0.3
+    }
+);
+
+sectionHeadings.forEach((heading) => {
+    headingObserver.observe(heading);
+});
