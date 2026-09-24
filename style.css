@@ -64,7 +64,11 @@ html {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    border: 1px solid rgba(232, 132, 58, 0.7);
+
+    box-shadow:inset
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(232, 132, 58, 0.3);
 }
 
 .hero { 
@@ -281,4 +285,27 @@ button {
 
 section { 
     background: transparent;
+}
+
+
+.marina-viewer {
+    width: 100%;
+    height: 350px;
+    margin-top: 25px;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    background: rgba(10, 5, 2, 0.35);
+
+    border: 1px solid rgba(232, 132, 58, 0.4);
+
+    box-shadow:
+        0 0 20px rgba(232, 132, 58, 0.15);
+}
+
+.marina-viewer canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
