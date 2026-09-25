@@ -516,3 +516,22 @@ const headingObserver = new InteractionObserver(
 sectionHeadings.forEach((heading) => {
     headingObserver.observe(heading);
 });
+
+const projectCards = document.querySelectorAll(".project-card");
+const cardObserver = new InteractionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    },
+    {
+        threshold: 0.3
+    }
+);
+
+projectCards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 150}ms`;
+    projectObserver.observe(card);
+});
