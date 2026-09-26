@@ -500,7 +500,7 @@ window.addEventListener("resize", () => {
 
 
 const sectionHeadings = document.querySelectorAll("section h2");
-const headingObserver = new InteractionObserver(
+const headingObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -518,7 +518,7 @@ sectionHeadings.forEach((heading) => {
 });
 
 const projectCards = document.querySelectorAll(".project-card");
-const cardObserver = new InteractionObserver(
+const cardObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -533,5 +533,19 @@ const cardObserver = new InteractionObserver(
 
 projectCards.forEach((card, index) => {
     card.style.transitionDelay = `${index * 150}ms`;
-    projectObserver.observe(card);
+    cardObserver.observe(card);
+});
+
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach((card) => {
+    card.addEventListener("mousemove", (event) => {
+        const rect = card.getBoundingClientRect();
+       
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+    });
 });

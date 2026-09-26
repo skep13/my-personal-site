@@ -395,3 +395,29 @@ section h2.show {
         0 0 20px rgba(232, 132, 58, 0.3);
 }
 
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: var(--mouse-x, -100px);
+    top: var(--mouse-y, -100px);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(232, 132, 58, 0.18) 0%,
+        rgba(232, 132, 58, 0.05) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    transition: left 0.1s ease, top 0.1s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
