@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Site</title>
+    <meta name="description" content="Jacob Matthews - Cyber Security student interested in DFIR, OSINT and homelabbing.">
+    <title>Jacob Matthews | Personal Site</title>
     <link rel="stylesheet" href="style.css">
     <script type="importmap">
         {
@@ -12,132 +13,150 @@
                 "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
                 "@pixiv/three-vrm": "https://cdn.jsdelivr.net/npm/@pixiv/three-vrm@3/lib/three-vrm.module.min.js"
             }
-         }
+        }
     </script>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-image">
+            <span class="logo-text">Jacob Matthews</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <div class="leaves" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
     </div>
 
-    <div class="hero">
+    <header class="hero">
         <h1>Hi!!!! Welcome to My Personal Site</h1>
 
+        <p class="hero-subtitle">
+            I'm Jacob, a Cyber Security student into DFIR, OSINT and homelabbing.
+            This site was made for the Stardance Hackclub Challenge.
+        </p>
+
         <div class="buttons">
-            <a href="#about">
-                <button>About me</button>
-            </a>
-            
-            <a href="#skills">
-                <button>My Skills</button>
-            </a>
-            
-            <a href="#projects">
-                <button>My Projects!!</button>
-            </a>
-
-            <a href="#contact">
-                <button>Contact me</button>
-            
-            </a>
+            <a class="btn" href="#about">About me</a>
+            <a class="btn" href="#skills">My Skills</a>
+            <a class="btn" href="#achievements">Achievements</a>
+            <a class="btn" href="#projects">My Projects!!</a>
+            <a class="btn" href="#contact">Contact me</a>
         </div>
-    </div>
+    </header>
 
-    <p>This is a personal website made for the Stardance Hackclub Challenge.</p>
+    <main>
 
     <section id="about">
-<h2>About Me</h2>
+        <h2>About Me</h2>
 
-<p>
-    Hiii!!! My name is Jacob and I'm a Cyber Security student
-    with a strong interest in Digital Forensics, Incident Response
-    (DFIR), and OSINT.
-</p>
+        <p>
+            Hiii!!! My name is Jacob and I'm a Cyber Security student
+            with a strong interest in Digital Forensics, Incident Response
+            (DFIR), and OSINT.
+        </p>
 
-<p>
-    I am developing my technical skills with hands-on projects
-    and experimenting with my own homelab. I use Proxmox VE to explore
-    virtualisation, networking, server management and security tooling.
-</p>
+        <p>
+            I am developing my technical skills with hands-on projects
+            and experimenting with my own homelab. I use Proxmox VE to explore
+            virtualisation, networking, server management and security tooling.
+        </p>
 
-<p>
-    I'm also interested in AI and run local AI systems using a PHP
-    backend with a web interface hosted through Apache aswell as my own project named Marina.
-</p>
+        <p>
+            I'm also interested in AI and run local AI systems using a PHP
+            backend with a web interface hosted through Apache, as well as my own project named Marina.
+        </p>
 
-<p>
-    I'm passionate about cybersecurity and want to continue developing
-    my skills in digital forensics, DFIR, infrastructure and emerging
-    technologies.
-</p>
+        <p>
+            I'm passionate about cybersecurity and want to continue developing
+            my skills in digital forensics, DFIR, infrastructure and emerging
+            technologies.
+        </p>
+    </section>
 
-</section>
+    <section id="skills">
+        <h2>My Skills</h2>
 
-<section id="skills">
-    <h2>My Skills</h2>
+        <p>
+            Areas of cybersecurity and technology that I am currently
+            developing my knowledge and practical experience in.
+        </p>
 
-    <p>Areas of cybersecurity and technology that I am currently
-        developing my knowledge and practical experience in.
-    </p>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <h3>Digital Forensics</h3>
-            <p>
-                I am learning how to conduct digital forensics investigations
-                and analyze digital evidence to support legal proceedings.
-            </p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Digital Forensics</h3>
+                <p>
+                    I am learning how to conduct digital forensics investigations
+                    and analyse digital evidence to support legal proceedings.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Incident Response</h3>
+                <p>
+                    I am developing my skills in incident response, including
+                    identifying, containing, and mitigating security incidents.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>OSINT</h3>
+                <p>
+                    I am learning how to gather and analyse publicly available
+                    information to support investigations and threat intelligence.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Networking</h3>
+                <p>
+                    I am developing my knowledge of networking concepts and protocols,
+                    including TCP/IP, DNS, and HTTP.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Virtualisation</h3>
+                <p>
+                    I am learning how to use virtualisation technologies such as Proxmox VE
+                    to create and manage virtual machines and containers.
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="skill-card">
-            <h3>Incident Response</h3>
-            <p>
-                I am developing my skills in incident response, including
-                identifying, containing, and mitigating security incidents.
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <h3>OSINT</h3>
-            <p>
-                I am learning how to gather and analyze publicly available
-                information to support investigations and threat intelligence.
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Networking</h3>
-            <p>
-                I am developing my knowledge of networking concepts and protocols,
-                including TCP/IP, DNS, and HTTP.
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Virtualisation</h3>
-            <p>
-                I am learning how to use virtualisation technologies such as Proxmox VE
-                to create and manage virtual machines and containers.
-            </p>
-        </div>
-</section>
-    
-<section id="achievements">
+    <section id="achievements">
         <h2>My Achievements</h2>
         <p>Here are some of my achievements:</p>
 
         <div class="achievements-grid">
             <div class="achievement-card">
-                <h3>Cyber Security Student</h3>
+                <h3>Maltego OSINT CTF</h3>
                 <p>
-                    I am currently studying Cyber Security and developing my skills in
-                    digital forensics, incident response, OSINT, networking, and virtualisation.
+                    Completed the Qualifier A challenge for the Maltego CTF, which
+                    helped me develop practical OSINT investigation skills.
                 </p>
             </div>
 
             <div class="achievement-card">
-                <h3>Homelab Enthusiast</h3>
+                <h3>Stardance Hackclub Challenge</h3>
+                <p>
+                    I built this personal website using HTML, CSS and JavaScript
+                    for the Stardance Hackclub Challenge.
+                </p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Homelab Built</h3>
                 <p>
                     I have set up my own homelab using Proxmox VE to experiment with
                     virtualisation, networking, and security tools.
@@ -145,86 +164,95 @@
             </div>
 
             <div class="achievement-card">
-                <h3>AI Enthusiast</h3>
+                <h3>Local AI Setup</h3>
                 <p>
-                    I am interested in AI and run local AI systems using a PHP backend
-                    with a web interface hosted through Apache as well as my own project named Marina.
+                    I run local AI systems using a PHP backend with a web interface
+                    hosted through Apache, and built my own AI companion, Marina.
                 </p>
             </div>
+
             <div class="achievement-card">
-                <h3>Stardance Hackclub Challenge</h3>
+                <h3>Cyber Security Student</h3>
                 <p>
-                    I built this personal website using HTML and CSS for the Stardance Hackclub Challenge.
+                    I am currently studying Cyber Security and developing my skills in
+                    digital forensics, incident response, OSINT, networking, and virtualisation.
                 </p>
-            </div>
-                <div class="achievement-card">
-                    <h3>Maltego OSINT</h3>
-                    <p>
-                        Completed the Qualifier A challenge for the Maltego CTF 
-                        it helped me develop practical OSINT investigation skills
-                    </p>
             </div>
         </div>
     </section>
 
-<h2
     <section id="projects">
         <h2>My Projects</h2>
         <p>Here are some of my projects:</p>
 
-    <div class="projects-grid">
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>My Homelab</h3>
+                <p>
+                    A self-hosted environment to experiment with virtualisation,
+                    networking and different security tools.
+                </p>
+                <div class="project-images">
+                    <img src="homelab.jpg"
+                         alt="My homelab: stacked mini PCs, a network switch and a gaming PC"
+                         loading="lazy">
+                </div>
+            </div>
 
-        <div class="project-card">
-            <h3>my home lab</h3>
-            <p>
-                A self hosted environment to experiment with virtualisation, 
-                networking and different security tools
-            </p>
-        </div>
-        
-        <div class="project-card">
-            <h3>Marina</h3>
-            <p>
-                A local AI system who acts as a cutomisable desktop 
-                companion and can assit with setting timers checking battery ajd a lot of other things!
-            </p>
-            <div class="marina-viewer" id="marina-viewer"></div>
-        </div>
+            <div class="project-card">
+                <h3>Marina</h3>
+                <p>
+                    A local AI system that acts as a customisable desktop
+                    companion and can assist with setting timers, checking battery and a lot of other things!
+                </p>
+                <div class="marina-viewer" id="marina-viewer"></div>
+            </div>
 
-        <div class="project-card">
-            <h3>My Personal Website</h3>
-            <p>
-                A personal website I built using HTML and CSS
-                for the Stardance Hackclub Challenge!
-            </p>
-        </div>
+            <div class="project-card">
+                <h3>My Personal Website</h3>
+                <p>
+                    A personal website I built using HTML, CSS and JavaScript
+                    for the Stardance Hackclub Challenge!
+                </p>
+                <div class="project-images">
+                    <img src="Screenshot%202026-10-15%20at%2009.48.34.png"
+                         alt="Homepage of my personal website"
+                         loading="lazy">
+                    <img src="Screenshot%202026-10-15%20at%2009.53.54.png"
+                         alt="Projects section of my personal website"
+                         loading="lazy">
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact">
-    <h2>Contact Me</h2>
+        <h2>Contact Me</h2>
 
-    <p>Want to get in touch? You can find me here:</p>
+        <p>Want to get in touch? You can find me here:</p>
 
-    <a href="https://www.linkedin.com/in/jacob-matthews-b8ab39397/"
-       target="_blank"
-       rel="noopener noreferrer">
-        My LinkedIn
-    </a>
-
-</section>
+        <div class="contact-links">
+            <a class="btn"
+               href="https://www.linkedin.com/in/jacob-matthews-b8ab39397/"
+               target="_blank"
+               rel="noopener noreferrer">
+                My LinkedIn
+            </a>
+        </div>
     </section>
 
+    </main>
+
     <footer>
-        <p>&copy; 2026 My Personal Site</p>
+        <p>&copy; 2026 Jacob Matthews</p>
 
         <img src="footer4-056137d8.avif"
-             alt="Smiling yellow star"
+             alt=""
              class="bottom-right-image">
     </footer>
 
+    <script src="reveal.js" defer></script>
     <script type="module" src="script.js"></script>
 
 </body>
 </html>
-

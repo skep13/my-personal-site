@@ -1,96 +1,126 @@
+/* Colours used across the site */
+:root {
+    --orange: #e8843a;
+    --orange-soft: rgba(232, 132, 58, 0.4);
+    --cream: #fff3df;
+    --text: #f4e6d4;
+    --panel: rgba(25, 12, 5, 0.55);
+    --nav-height: 90px;
+}
+
 html {
     scroll-behavior: smooth;
 }
-.buttons button {
-    padding: 14px 28px;
 
-    border: 1px solid #e8843a;
-    border-radius: 30px;
+/*background image, with a dark tint so text is readable*/
+body {
+    margin: 0;
 
-    background: rgba(60, 30, 10, 0.45);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
 
-    color: #fff3df;
-
-    font-size: 1rem;
-    font-weight: bold;
-
-    transition: 0.3s ease;
+    background-image:
+        linear-gradient(rgba(15, 6, 2, 0.55), rgba(15, 6, 2, 0.75)),
+        url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.buttons button:hover {
-    background: rgba(232, 132, 58, 0.7);
+/* Pumpkin cursor */
+html,
+body,
+a,
+button {
+    cursor: url("pumpkin-cursor.png") 16 16, auto;
+}
 
-    transform: translateY(-4px);
+a {
+    color: var(--orange);
+}
+
+/* Navbar */
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(900px, 90%);
+    box-sizing: border-box;
+    padding: 12px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: rgba(20, 10, 5, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid var(--orange-soft);
+    border-radius: 16px;
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.3),
-        0 0 15px rgba(232, 132, 58, 0.6);
-}
+        0 0 20px rgba(232, 132, 58, 0.15);
 
-#about {
-    background-color: transparent;
-    padding: 80px 30px;
-    border-radius: 15px;
-    margin: 30px 0;
-}
+    z-index: 1000;
 
-#projects {
-    background-color: transparent;
-    padding: 80px 30px;
-    border-radius: 15px;
-    margin: 30px 0;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-#contact {
-    background-color: transparent;
-    padding: 80px 30px;
-    border-radius: 15px;
-    margin: 30px 0;
-}
-
-.project-card {
-    background: rgba(240, 240, 240, 0.2);
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    border: 1px solid rgba(232, 132, 58, 0.7);
-
-    transform: translateY(-4px);
-
-    box-shadow:inset
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        0 0 20px rgba(232, 132, 58, 0.3);
-}
-
-.project-card {
-    opacity: 0;
-    transform: translateY(40px);
     transition:
-        opacity 0.8s ease,
-        transform 0.8s ease,
-        box-shadow 0.8s ease,
-        border-color 0.8s ease;
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-
-.project-card.show {
-    opacity: 1;
-    transform: translateY(0);
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.hero { 
-    min-height: 130vh;
+.logo-image {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.logo-text {
+    color: var(--cream);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+    text-shadow: 0 0 10px rgba(232, 132, 58, 0.6);
+}
+
+/* Hero */
+
+.hero {
+    min-height: 100vh;
+    padding: 0 20px;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -101,32 +131,264 @@ html {
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
-    color: #fff3df;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 1.1;
+    color: var(--cream);
 
-    margin-bottom: 35px;
+    margin: 0 0 20px;
 
     text-shadow:
         0 0 10px rgba(255, 170, 70, 0.7),
         0 0 25px rgba(255, 120, 30, 0.45);
 
-        animation: hero-glow 3s ease-in-out infinite alternate;
+    animation: hero-glow 3s ease-in-out infinite alternate;
 }
 
-/*background image*/
-body {
-    background-image: url("background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 0 35px;
 }
-/* Pumpkin cursor */
-html,
-body,
-a,
-button {
-    cursor: url("pumpkin-cursor.png") 16 16, auto;
+
+@keyframes hero-glow {
+    from {
+        text-shadow:
+            0 0 10px rgba(255, 170, 70, 0.6),
+            0 0 25px rgba(255, 120, 30, 0.35);
+    }
+
+    to {
+        text-shadow:
+            0 0 16px rgba(255, 170, 70, 0.9),
+            0 0 40px rgba(255, 120, 30, 0.6);
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+
+    border: 1px solid var(--orange);
+    border-radius: 30px;
+
+    background: rgba(60, 30, 10, 0.45);
+
+    color: var(--cream);
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: rgba(232, 132, 58, 0.7);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(232, 132, 58, 0.6);
+}
+
+/* Sections */
+
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 80px 30px;
+    background: transparent;
+
+    /* stops the fixed navbar covering headings when you click a link */
+    scroll-margin-top: var(--nav-height);
+}
+
+section h2 {
+    font-size: 2.2rem;
+    color: var(--cream);
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        text-shadow 0.8s ease;
+
+    text-shadow:
+        0 0 0 rgba(232, 132, 58, 0);
+}
+
+section h2.show {
+    opacity: 1;
+    transform: translateY(0);
+
+    text-shadow:
+        0 0 10px rgba(232, 170, 70, 0.7),
+        0 0 25px rgba(232, 132, 58, 0.5);
+}
+
+#about p {
+    font-size: 1.1rem;
+    max-width: 720px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+/* Cards (skills, achievements and projects all share this look) */
+
+.skills-grid,
+.achievements-grid,
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-card,
+.achievement-card,
+.project-card {
+    background: var(--panel);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(232, 132, 58, 0.25);
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.skill-card h3,
+.achievement-card h3,
+.project-card h3 {
+    color: var(--cream);
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 8px rgba(255, 170, 70, 0.4);
+}
+
+.skill-card p,
+.achievement-card p,
+.project-card p {
+    margin-bottom: 0;
+}
+
+.skill-card:hover,
+.achievement-card:hover,
+.project-card.show:hover {
+    transform: translateY(-6px);
+    border-color: rgba(232, 132, 58, 0.8);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(232, 132, 58, 0.3);
+}
+
+/* Project cards fade in when scrolled to */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mouse glow on project cards */
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: var(--mouse-x, -100px);
+    top: var(--mouse-y, -100px);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(232, 132, 58, 0.25) 0%,
+        rgba(232, 132, 58, 0.07) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Screenshots inside project cards */
+
+.project-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.project-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid rgba(232, 132, 58, 0.25);
+}
+
+.marina-viewer {
+    width: 100%;
+    height: 350px;
+    margin-top: 25px;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    background: rgba(10, 5, 2, 0.35);
+
+    border: 1px solid var(--orange-soft);
+
+    box-shadow:
+        0 0 20px rgba(232, 132, 58, 0.15);
+}
+
+.marina-viewer canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: rgba(244, 230, 212, 0.7);
 }
 
 /* Star in the bottom right corner */
@@ -253,24 +515,14 @@ button {
 
 @keyframes leaf-fall {
     0% {
-        opacity: 0.9;
         transform: translate3d(0, 0, 0) rotate(0deg);
-    }
-
-    10% {
-        opacity: 0.9;
     }
 
     50% {
         transform: translate3d(var(--drift), 55vh, 0) rotate(200deg);
     }
 
-    90% {
-        opacity: 0.9;
-    }
-
     100% {
-        opacity: 0.9;
         transform: translate3d(
             calc(var(--drift) * -0.4),
             110vh,
@@ -290,174 +542,144 @@ button {
     .leaves span {
         animation-duration: calc(var(--duration) * 1.4);
     }
-}
 
+    .navbar {
+        justify-content: center;
+    }
 
-/* Turn leaves off for reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-    .leaves {
+    .nav-links {
         display: none;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .bottom-right-image {
+        width: 70px;
     }
 }
 
-section { 
-    background: transparent;
+
+/* Turn animations off for reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .leaves {
+        display: none;
+    }
+
+    .hero h1 {
+        animation: none;
+    }
+
+    section h2,
+    .project-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 
-.marina-viewer {
-    width: 100%;
-    height: 350px;
-    margin-top: 25px;
-
-    border-radius: 15px;
-    overflow: hidden;
-
-    background: rgba(10, 5, 2, 0.35);
-
-    border: 1px solid rgba(232, 132, 58, 0.4);
-
-    box-shadow:
-        0 0 20px rgba(232, 132, 58, 0.15);
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.marina-viewer canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-section h2 {
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease,
-        text-shadow 0.8s ease;
-
-        text-shadow:
-            0 0 0 rgba(232, 132, 58, 0);
-}
-
-section h2.show {
-    opacity: 1;
-    transform: translateY(0);
-    
-    text-shadow:
-        0 0 10px rgba(232, 170, 70, 0.7),
-        0 0 25px rgba(232, 132, 58, 0.5);
-}
-
-#skills {
-    background-color: transparent;
-    padding: 80px 30px;
-    border-radius: 15px;
-    margin: 30px 0;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.skill-card {
-    background: rgba(240, 240, 240, 0.12);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(232, 132, 58, 0.25);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-    transition: 0.3s ease;
-}
-
-.skill-card h3 {
-    color: #fff3df;
-    margin-top: 0;
-    margin-bottom: 10px;
-
-    text-shadow:
-        0 0 8px rgba(255, 170, 70, 0.4);
-}
-
-.skill-card p {
-    margin-bottom: 0;
-}
-
-.skill-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(232, 132, 58, 0.8);
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        0 0 20px rgba(232, 132, 58, 0.3);
-}
-
-.project-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.project-card::before {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    left: var(--mouse-x, -100px);
-    top: var(--mouse-y, -100px);
-    transform: translate(-50%, -50%);
-    background: radial-gradient(
-        circle,
-        rgba(232, 132, 58, 0.18) 0%,
-        rgba(232, 132, 58, 0.05) 40%,
-        transparent 70%
+.skills-grid,
+.achievements-grid,
+.projects-grid {
+    grid-template-columns: repeat(
+        auto-fit
+        minmax(min(250px, 100%), 1fr)
     );
+}
+
+a:focus-visible {
+    outline: 3px solid var(--cream);      
+    outline-offset: 5px;
+}
+
+@media (scripting: none) {
+    section h2,
+    .project-card {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    section h2,
+    .btn,
+    .project-card {
+        opacity: 1;
+        transform: none;
+    }
+    .achievement-card
+    .skill-card {
+        transition: none;
+    }
+}
+
+.btn:hover,
+.btn:focus-visible {
+.skill-card:hover,
+.achievement-card:hover,
+.project-card.show:hover {
+    transform: none;
+    }
+}
+
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--orange-soft);
+    transform-origin: left;
     pointer-events: none;
-    transition: left 0.1s ease, top 0.1s ease;
+    z-index: 1100;
 }
 
-.project-card:hover::before {
-    opacity: 1;
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 100;
+    padding: 12px 18px;
+    background-color: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--orange-soft);
+    border-radius: 8px;
+    text-decoration: none;
 }
 
-#achievements {
-    background-color: transparent;
-    padding: 80px 30px;
-    border-radius: 15px;
-    margin: 30px 0;
+.back-to-top[hidden] {
+    display: none;
 }
 
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.achievement-card {
-    background: rgba(240, 240, 240, 0.12);
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-    transition: 0.3s ease;
-}
-
-.achievement-card h3 {
-    margin-top: 0;
-    color: #fff3df;
-
-    text-shadow:
-        0 0 8px rgba(255, 170, 70, 0.4);
-}
-
-.achievement-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(232, 132, 58, 0.8);
-
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    background-color: var(--orange-soft);
+    color: var(--cream);
+    transform: translateY(-4px);
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        0 0 20px rgba(232, 132, 58, 0.3);
+        0 8px 20px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(232, 132, 58, 0.6);
+}
+
+section:target {
+    border-radius: 16px;
+    background-color: rgba(25, 12, 5, 0.75);
+}
+
+::selection {
+    background-color: var(--orange-soft);
+    color: #190c05;
 }
